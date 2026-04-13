@@ -24,26 +24,28 @@ body: JSON.stringify(newPlant),
 return (
 <form onSubmit={handleSubmit}>
 <input
-placeholder="Plant name" // 👈 ADD
+placeholder="Plant name"
 value={name}
 onChange={(e) => setName(e.target.value)}
 />
 
 <input
-placeholder="Image URL" // 👈 ADD
+placeholder="Image URL"
 value={image}
 onChange={(e) => setImage(e.target.value)}
 />
 
 <input
-placeholder="Price" // 👈 ADD
+placeholder="Price"
 value={price}
 onChange={(e) => setPrice(e.target.value)}
 />
+
 <button type="submit">Add Plant</button>
 </form>
 );
 }
 
 export default NewPlantForm;
+
 

@@ -1,10 +1,14 @@
 import PlantCard from "./PlantCard";
 
-function PlantList({ plants }) {
+function PlantList({ plants, onAddToCart }) {
 return (
-<div>
+<div className="plant-list">
 {plants.map((plant) => (
-<PlantCard key={plant.id} plant={plant} />
+<PlantCard
+key={plant.id}
+plant={plant}
+onAddToCart={onAddToCart}
+/>
 ))}
 </div>
 );
