@@ -17,9 +17,12 @@ disabled={!inStock}
 Add to Cart
 </button>
 
-<button onClick={() => setInStock(!inStock)}>
+<span
+className={inStock ? "in-stock" : "out-stock"}
+onClick={() => setInStock(!inStock)}
+>
 {inStock ? "In Stock" : "Out of Stock"}
-</button>
+</span>
 </div>
 );
 }
