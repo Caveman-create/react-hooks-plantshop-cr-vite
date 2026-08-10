@@ -11,9 +11,18 @@ const [search, setSearch] = useState("");
 const [cart, setCart] = useState([]);
 
 useEffect(() => {
-fetch("/db.json")
+fetch("http://localhost:6001/plants")
 .then((res) => res.json())
-.then((data) => setPlants(data.plants));
+.then((data) => {
+const plantsData = Array.isArray(data) ? data : data.plants || [];
+const normalizedPlants = plantsData.map((plant) => ({
+...plant,
+image: plant.image?.startsWith("./")
+? plant.image.replace("./", "/")
+: plant.image,
+}));
+setPlants(normalizedPlants);
+});
 }, []);
 
 function handleAddPlant(newPlant) {

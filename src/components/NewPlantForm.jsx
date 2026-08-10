@@ -6,19 +6,24 @@ const [image, setImage] = useState("");
 const [price, setPrice] = useState("");
 
 function handleSubmit(e) {
-e.preventDefault();
+  e.preventDefault();
 
-const newPlant = { name, image, price };
+  const newPlant = { name, image, price };
 
-fetch("http://localhost:6001/plants", {
-method: "POST",
-headers: {
-"Content-Type": "application/json",
-},
-body: JSON.stringify(newPlant),
-})
-.then((res) => res.json())
-.then((data) => onAddPlant(data));
+  fetch("http://localhost:6001/plants", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPlant),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      onAddPlant(data);
+      setName("");
+      setImage("");
+      setPrice("");
+    });
 }
 
 return (
