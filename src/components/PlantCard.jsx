@@ -4,7 +4,7 @@ function PlantCard({ plant, onAddToCart }) {
   const [inStock, setInStock] = useState(true);
 
   return (
-    <div className="plant-card" data-testid="plant-item">
+    <li className="plant-card" data-testid="plant-item">
       <img src={plant.image} alt={plant.name} />
 
       <h4>{plant.name}</h4>
@@ -25,7 +25,7 @@ function PlantCard({ plant, onAddToCart }) {
       >
         {inStock ? "In Stock" : "Out of Stock"}
       </span>
-    </div>
+    </li>
   );
 }
 

@@ -11,7 +11,7 @@ const [search, setSearch] = useState("");
 const [cart, setCart] = useState([]);
 
 useEffect(() => {
-fetch("http://localhost:6001/plants")
+fetch("/db.json")
 .then((res) => res.json())
 .then((data) => {
 const plantsData = Array.isArray(data) ? data : data.plants || [];

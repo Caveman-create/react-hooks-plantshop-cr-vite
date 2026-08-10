@@ -2,7 +2,7 @@ import PlantCard from "./PlantCard";
 
 function PlantList({ plants, onAddToCart }) {
 return (
-<div className="plant-list">
+<ul className="cards">
 {plants.map((plant) => (
 <PlantCard
 key={plant.id}
@@ -10,7 +10,7 @@ plant={plant}
 onAddToCart={onAddToCart}
 />
 ))}
-</div>
+</ul>
 );
 }
 
